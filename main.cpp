@@ -9,6 +9,10 @@ using namespace std;
 cv::Mat DEBUG::src;
 cv::Mat DEBUG::src_c1;
 
+/*
+    ①输入轮廓点，返回膨胀或者腐蚀后对应位置的轮廓点
+    ②可以用drawContours(lineWidth=2)方式获取内缩＋外扩一个栅格的轮廓，注意环状轮廓外层findContours查找到的默认是４连通，内层只能找到８连通．所以可以按需要填充内层获取４层
+*/
 std::vector<cv::Point> scale(std::vector<cv::Point> data, float sec_dis) {
 
     int num = (int) data.size();
