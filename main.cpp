@@ -14,6 +14,7 @@ std::vector<cv::Point> scale(std::vector<cv::Point> data, float sec_dis) {
     int num = (int) data.size();
     std::vector<cv::Point> scal_data;
 
+    //注意这里遍历次数一定要是num!!!否则会遗漏最后一个值
     for (int i = 1; i <= num; ++i) {
         auto x1 = data[(i) % num].x - data[(i - 1) % num].x;
         auto y1 = data[(i) % num].y - data[(i - 1) % num].y;
